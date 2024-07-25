@@ -1,0 +1,44 @@
+<body>
+    <h1>Hii..</h1>
+  </body>
+<script>
+  console.log("Hii ..");
+  var a = 100;
+  console.log(typeof a);
+  a = "ram";
+  console.log(typeof a);
+  a = {
+    name: "ram",
+    age: 10,
+    salery: 1234,
+  };
+  console.log(typeof a);
+  console.log(" -------------");
+  console.log(a.name + " " + a.age);
+
+  let emp = [
+    {
+      name: "ram",
+      age: 10,
+      salery: 1234,
+    },
+    {
+      name: "sam",
+      age: 10,
+      salery: 1234,
+    },
+    {
+      name: "kam",
+      age: 10,
+      salery: 1234,
+    },
+  ];
+  console.log(" -------------");
+
+  let total_salery = 0;
+  emp.forEach((e) => {
+    total_salery += e.salery;
+  });
+  console.log(total_salery);
+</script>
+

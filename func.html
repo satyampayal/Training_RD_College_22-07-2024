@@ -1,0 +1,41 @@
+<script>
+    let mobile=[
+        {
+            name:"samsung",
+            ram:"8Gb",
+            price:150,
+        },
+        {
+            name:"Apple",
+            ram:"8Gb",
+            price:1050,
+        },
+        {
+            name:"vivo",
+            ram:"8Gb",
+            price:450,
+        },
+        {
+            name:"Redmi",
+            ram:"8Gb",
+            price:350,
+        },
+        {
+            name:"Xiomi",
+            ram:"8Gb",
+            price:250,
+        },
+    ];
+    function show(mobile){
+        let maxPrice=mobile[0].price;
+       mobile.forEach((m)=>{
+        console.log(m.name+ " "+ m.ram+" "+ m.price)
+        if(maxPrice<m.price){
+            maxPrice=m.price;
+        }
+       })
+       return maxPrice;
+    }
+  console.log( show(mobile))
+  
+</script>

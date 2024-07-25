@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const student = [
+      {
+        name: "ram",
+        age: 10,
+        marks: 900,
+      },
+      {
+        name: "dam",
+        age: 10,
+        marks: 100,
+      },
+      {
+        name: "nam",
+        age: 10,
+        marks: 400,
+      },
+      {
+        name: "kam",
+        age: 10,
+        marks: 120,
+      },
+      {
+        name: "sam",
+        age: 10,
+        marks: 100,
+      },
+    ];
+    var averge = 0;
+    var totalMarks = 0;
+    student.forEach((s) => {
+      totalMarks += s.marks;
+    });
+    console.log(totalMarks / student.length);
+
+    // find minimum salery
+    let min = student[0].marks;
+    let name = student[0].name;
+    let max = student[0].marks;
+    let maxMarksName = student[0].name;
+    student.forEach((s) => {
+      if (s.marks < min) {
+        min = s.marks;
+        name = s.name;
+      }
+      if (s.marks > max) {
+        max = s.marks;
+        maxMarksName = s.name;
+      }
+    });
+
+    console.log("Minimum marks" + min + "and name: " + name);
+    console.log("maximum marks " + max + "and name : " + maxMarksName);
+    const p = document.createElement("p");
+    p.innerText = totalMarks / student.length;
+    document.body.appendChild(p);
+  </script>
+</html>
