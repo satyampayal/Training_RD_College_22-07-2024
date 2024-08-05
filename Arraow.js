@@ -48,4 +48,6 @@ let mobile=[
         price: 350,
       }
 ]
+
 heroes(mobile)
+
