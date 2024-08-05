@@ -23,7 +23,7 @@ mobile.map(m => {
     }
 });
 
-   console.log(emp)
+  return emp;
 }
 
 let mobile=[
@@ -48,6 +48,6 @@ let mobile=[
         price: 350,
       }
 ]
-
-heroes(mobile)
+const m=heroes(mobile)
+console.log(m.name);
 
