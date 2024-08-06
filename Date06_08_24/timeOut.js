@@ -22,13 +22,11 @@ function showName() {
   }, 3000);
 }
 
-// const promice = new Promise((res, rej) => {
-  function addEmployee() {
-    setTimeout(()=>{emp.push({ name: "satyam", age: 10, salery: 1234 })}, 7000);
+  function addEmployee(callback) {
+    setTimeout(()=>{
+        emp.push({ name: "satyam", age: 10, salery: 1234 })
+        callback();}
+    , 7000);
   }
-  addEmployee();
-//   if(res) showName();
-//   if(rej) console.log("Not add Succesfully") ;
-// });
-// addEmployee();
-showName();
+  addEmployee(showName);
+

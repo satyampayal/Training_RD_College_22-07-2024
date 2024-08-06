@@ -11,13 +11,14 @@
 
 // now  Q
 
-function display(){
-    console.log("Simple Interset Calsulated successfully")
+function display() {
+  console.log("Simple Interset Calculated successfully");
 }
-function simpleInterst(p,r,t,callback){
-    console.log((p*r*t)/100);
+function simpleInterst(p, r, t, callback) {
+  setTimeout(() => {
+    console.log((p * r * t) / 100);
     callback();
-
+  }, 3000);
 }
 
-simpleInterst(1000,2,2,display);
+simpleInterst(1000, 2, 2, display);
