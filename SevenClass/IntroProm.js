@@ -1,0 +1,3 @@
+// callback hell is complicated to understand because of its structure 
+// there is function pass 
+// now we come to Promices // here is function attached ... and easy to ...
