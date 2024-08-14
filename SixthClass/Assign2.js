@@ -6,7 +6,7 @@
 
 function getMovie(id,callback){
     setTimeout(()=>{
-          callback("Fighter");
+          callback({id:1,name:"Fighter"});
     },3000);
 }
 function getCinema(name,callback){
@@ -30,3 +30,8 @@ getMovie(1,(movie)=>{
         })
     })
 })
+
+// Assignment 
+// now you update logic 
+// fix list of Cinams approx 10 some regular and some multiplex  
+// we send movieName  we need only multiplex cinemas 
