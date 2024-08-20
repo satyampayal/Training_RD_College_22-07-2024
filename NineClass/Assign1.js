@@ -42,13 +42,15 @@ const getEmp = (indx) => {
 
 const getBasicSalery = (post) => {
   const pr = new Promise((res, rej) => {
+    let bs;
     setTimeout(() => {
       if (post == "") rej("Invalid Emp");
       else {
-        if (post == "Professor") res(40000);
-        else if (post == "Lecturer") res(30000);
-        else res(2000);
+        if (post == "Professor")  bs=40000;
+        else if (post == "Lecturer") bs=30000;
+        else  bs=2000;
       }
+      res([post,bs]);
     }, 1000);
   });
   return pr;
@@ -56,6 +58,7 @@ const getBasicSalery = (post) => {
 
 const getGrossSalery = (basicSalery, post) => {
   const pr = new Promise((res, rej) => {
+    console.log(post+" Post ")
     let hra;
     setTimeout(() => {
       if (post == "Professor") hra = 10000;
@@ -72,16 +75,15 @@ const getGrossSalery = (basicSalery, post) => {
   return pr;
 };
 
-let temp = {};
-getEmp(3)
+getEmp(1)
   .then((empl) => {
     console.log(empl);
     temp = empl;
     return getBasicSalery(empl.post);
   })
-  .then((bs) => {
-    console.log(bs);
-    return getGrossSalery(bs, temp.post);
+  .then((result) => {
+    console.log(result);
+    return getGrossSalery( result[1],result[0]);
   })
   .then((grossSalery) => console.log(grossSalery))
   .catch((e) => console.log(e))
