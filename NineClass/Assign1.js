@@ -11,14 +11,14 @@ let emp = [
     name: "Shankar",
     age: 28,
     sallery: 30,
-    post: "HR",
+    post: "Professor",
   },
   {
     id: 3,
     name: "Tushar",
     age: 28,
     sallery: 30,
-    post: "C.S.E",
+    post: "",
   },
   {
     id: 4,
@@ -32,10 +32,9 @@ const getEmp = (indx) => {
   const pr = new Promise((res, rej) => {
     setTimeout(() => {
       if (indx < emp.length) {
-        let result=emp.find((emp)=>emp.id===indx);
-        res(result)
-      }
-      else rej("Id is not  Present");
+        let result = emp.find((emp) => emp.id === indx);
+        res(result);
+      } else rej("Id is not  Present");
     }, 1000);
   });
   return pr;
@@ -55,7 +54,7 @@ const getBasicSalery = (post) => {
   return pr;
 };
 
-const getGrossSalery = (basicSalery,post) => {
+const getGrossSalery = (basicSalery, post) => {
   const pr = new Promise((res, rej) => {
     let hra;
     setTimeout(() => {
@@ -65,25 +64,25 @@ const getGrossSalery = (basicSalery,post) => {
       let da = basicSalery * 0.4;
       let ma = basicSalery * 0.1;
       let pf = basicSalery * 0.1;
-      let grossSalery = da + ma + pf + basicSalery +hra;
+      let grossSalery = da + ma + pf + basicSalery + hra;
 
       res(grossSalery);
     }, 1000);
   });
   return pr;
-
 };
 
-let temp={};
-getEmp(3).then(empl=>{
+let temp = {};
+getEmp(3)
+  .then((empl) => {
     console.log(empl);
-    temp=empl;
+    temp = empl;
     return getBasicSalery(empl.post);
-}).then(bs=>{
+  })
+  .then((bs) => {
     console.log(bs);
-    return getGrossSalery(bs,temp.post)
-})
-.then(grossSalery=>console.log(grossSalery))
-.catch(e=>console.log(e))
-.catch(e=>console.log(e));
-
+    return getGrossSalery(bs, temp.post);
+  })
+  .then((grossSalery) => console.log(grossSalery))
+  .catch((e) => console.log(e))
+  .catch((e) => console.log(e));
